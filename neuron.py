@@ -13,3 +13,4 @@ class neuron:
         self.array_hide = expit(self.array_input.dot(self.input_hide_weight))
         self.array_output = expit(self.array_hide.dot(self.hide_output_weight))
         item = self.array_output.dot(self.output_result_weight) - result
+
