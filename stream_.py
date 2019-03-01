@@ -1,6 +1,6 @@
 import numpy as np
 array = np.array([[2, 4], [3, 5.9], [4, 8.4], [5, 11], [6, 11.8], [7, 14.5]])
-weight = np.array([[2.5, 0]])
+weight = np.random.normal(3, 1, (1, 2))
 def determine (weight, array):
     item = array.T
     x_array = item[0]
@@ -8,6 +8,7 @@ def determine (weight, array):
     y_array = item[1]
     y_array = y_array.reshape(1, 6)
     item = x_array * weight[0][0] - y_array
+    item = item ** 2
     return np.sum(item)
 while determine(weight, array)>0.1 or determine(weight, array)<-0.1:
     item = array.T
